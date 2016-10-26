@@ -46,6 +46,13 @@ defmodule FacebookMessenger.Message.Test do
     {:ok, file} = File.read("#{System.cwd}/test/fixtures/messenger_response.json")
     res = FacebookMessenger.Response.parse(file)
     res = FacebookMessenger.Response.message_senders(res)
-    assert res == ["USER_ID"]
+    assert Enum.at(res,0).id == "USER_ID"
+  end
+
+  test "parses location attachment" do
+    {:ok, file} = File.read("#{System.cwd}/test/fixtures/messenger_location.json")
+    res = FacebookMessenger.Response.parse(file)
+    attachments = FacebookMessenger.Response.message_attachments(res)
+    assert [%FacebookMessenger.Attachment{payload: %{"coordinates" => %{"lat" => latitude, "long" => longitude}}} | _ ] = attachments
   end
 end

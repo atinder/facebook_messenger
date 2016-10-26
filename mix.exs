@@ -37,7 +37,8 @@ defmodule FacebookMessenger.Mixfile do
          {:plug, "> 0.0.0"},
          {:inch_ex, "> 0.0.0", only: :docs},
          {:ex_doc, "~> 0.7", only: :dev},
-         {:earmark, "~> 0.1", only: :docs}]
+         {:earmark, "~> 0.1", only: :docs},
+         {:credo, "~> 0.4", only: [:dev, :test]}]
 
     if Mix.env == :test do
       [{:coverex, "~> 1.4.8", only: :test}, {:poison, "~> 2.2.0", override: true} | d]

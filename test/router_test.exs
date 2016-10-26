@@ -94,7 +94,7 @@ defmodule FacebookMessenger.Router.Test do
     router = MockRouter.init([])
     {status, _, body} = MockRouter.call(conn, router) |> sent_resp
 
-    assert_received %{body: "{\"recipient\":{\"id\":\"USER_ID\"},\"message\":{\"text\":\"hello\"}}", url: "https://graph.facebook.com/v2.6/me/messages?access_token=PAGE_TOKEN"}
+    assert_received %{body: "{\"recipient\":{\"id\":{\"id\":\"USER_ID\"}},\"message\":{\"text\":\"hello\"}}", url: "https://graph.facebook.com/v2.6/me/messages?access_token=PAGE_TOKEN"}
   end
 
   test "challange: 200 calls the success function" do
