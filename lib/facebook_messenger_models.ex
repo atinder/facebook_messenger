@@ -222,6 +222,16 @@ defmodule FacebookMessenger.Response do
   end
 
   @doc """
+  Returns a list of message ids from a `FacebookMessenger.Response`
+  """
+  @spec message_ids(FacebookMessenger.Response) :: [String.t]
+  def message_ids(%{entry: entries}) do
+    messaging =
+    Enum.flat_map(entries, &Map.get(&1, :messaging))
+    |> Enum.map(&( &1 |> Map.get(:message) |> Map.get(:mid)))
+  end
+
+  @doc """
   Returns a list of message texts from a `FacebookMessenger.Response`
   """
   @spec message_texts(FacebookMessenger.Response) :: [String.t]
