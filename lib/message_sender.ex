@@ -54,11 +54,11 @@ defmodule FacebookMessenger.Sender do
   end
 
   defp create_message(%{} = message) do
-      message
+    message
   end
 
   defp create_message(message) do
-      %{text: message}
+    %{text: message}
   end
 
   defp page_token do

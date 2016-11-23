@@ -77,6 +77,19 @@ defmodule FacebookMessenger.QuickReply do
   }
 end
 
+defmodule FacebookMessenger.QuickReplies do
+  @moduledoc """
+  Messenger quick replies structure
+  """
+  @derive [Poison.Encoder]
+  defstruct [:text, :quick_replies]
+
+  @type t :: %FacebookMessenger.QuickReplies{
+    text: String.t,
+    quick_replies: [FacebookMessenger.QuickReply.t]
+  }
+end
+
 defmodule FacebookMessenger.Message do
   @moduledoc """
   Facebook message structure
