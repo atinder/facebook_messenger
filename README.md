@@ -1,9 +1,9 @@
 # ExFacebookMessenger
-[![Build Status](https://travis-ci.org/oarrabi/facebook_messenger.svg?branch=master)](https://travis-ci.org/oarrabi/facebook_messenger)
+[![Build Status](https://travis-ci.org/atinder/facebook_messenger.svg?branch=master)](https://travis-ci.org/atinder/facebook_messenger)
 [![Hex.pm](https://img.shields.io/hexpm/v/facebook_messenger.svg)](https://hex.pm/packages/facebook_messenger)
 [![API Docs](https://img.shields.io/badge/api-docs-yellow.svg?style=flat)](http://hexdocs.pm/facebook_messenger/)
-[![Coverage Status](https://coveralls.io/repos/github/oarrabi/facebook_messenger/badge.svg?branch=master)](https://coveralls.io/github/oarrabi/facebook_messenger?branch=master)
-[![Inline docs](http://inch-ci.org/github/oarrabi/facebook_messenger.svg?branch=master)](http://inch-ci.org/github/oarrabi/facebook_messenger)
+[![Coverage Status](https://coveralls.io/repos/github/atinder/facebook_messenger/badge.svg?branch=master)](https://coveralls.io/github/atinder/facebook_messenger?branch=master)
+[![Inline docs](http://inch-ci.org/github/atinder/facebook_messenger.svg?branch=master)](http://inch-ci.org/github/atinder/facebook_messenger)
 
 ExFacebookMessenger is a library that helps you create facebook messenger bots easily.
 
@@ -56,7 +56,7 @@ To get the `facebook_page_token` and `challenge_verification_token` follow the i
 For the webhook endpoint use `http://your-app-url/messenger/webhook`
 
 ### With Phoenix
-If you use phoenix framework in your project, then you need the phoenix version of `facebook_messenger` this can be found at `phoenix_facebook_messenger` [found here](https://github.com/oarrabi/phoenix_facebook_messenger).
+If you use phoenix framework in your project, then you need the phoenix version of `facebook_messenger` this can be found at `phoenix_facebook_messenger` [found here](https://github.com/atinder/phoenix_facebook_messenger).
 
 ## Sample
 
