@@ -13,6 +13,13 @@ defmodule FacebookMessenger.Creators do
     create_map_not_null(labels, values)
   end
 
+  @spec create_action(String.t) :: FacebookMessenger.Button.t
+  def create_action(sender_action) do
+    labels = ["sender_action"]
+    values = [sender_action]
+    create_map_not_null(labels, values)
+  end
+
   @doc """
   creates a quick reply to send to facebook
     * :content_type - the type of the quick reply

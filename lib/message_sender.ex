@@ -21,6 +21,22 @@ defmodule FacebookMessenger.Sender do
   end
 
   @doc """
+  sends an action to the the recepient
+
+    * :recepient - the recepient to send the message to
+    * :action - the action to send
+  """
+  @spec send_action(String.t, String.t) :: HTTPotion.Response.t
+  def send_action(recepient, action) do
+    res = manager.post(
+      url: url,
+      body: action_payload(recepient, action)
+    )
+    Logger.info("response from FB #{inspect(res)}")
+    res
+  end
+
+  @doc """
   creates a payload to send to facebook
 
     * :recepient - the recepient to send the message to
@@ -31,6 +47,19 @@ defmodule FacebookMessenger.Sender do
       recipient: %{id: recepient},
       message: create_message(message)
     }
+  end
+
+  @doc """
+  creates an action payload to send to facebook
+
+    * :recepient - the recepient to send the message to
+    * :action - the action to send
+  """
+  def action_payload(recepient, action) do
+    %{
+      recipient: %{id: recepient},
+      sender_action: action
+    } |> Poison.encode |> elem(1)
   end
 
   @doc """
