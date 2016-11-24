@@ -1,7 +1,6 @@
 defmodule FacebookMessenger.Creators do
   @doc """
   creates a button to send to facebook
-
     * :type - the type of the button
     * :title - the title button
     * :url - the url of the button if url type
@@ -16,10 +15,8 @@ defmodule FacebookMessenger.Creators do
 
   @doc """
   creates a quick reply to send to facebook
-
-    * :type - the type of the quick reply
+    * :content_type - the type of the quick reply
     * :title - the title quick reply
-    * :url - the url of the quick reply if url type
     * :payload - the developer defined payload to be returned by the quick reply
   """
   @spec create_quick_reply(String.t, String.t, String.t) :: FacebookMessenger.QuickReply.t
@@ -29,6 +26,11 @@ defmodule FacebookMessenger.Creators do
     create_map_not_null(labels, values)
   end
 
+  @doc """
+  creates quick reples to send to facebook
+    * :text - text for quick replies
+    * :quick_replies - list of quick replies
+  """
   @spec create_quick_replies(String.t, [FacebookMessenger.QuickReply.t]) :: FacebookMessenger.QuickReplies.t
   def create_quick_replies(text, quick_replies) do
     labels = ["text", "quick_replies"]
@@ -38,7 +40,6 @@ defmodule FacebookMessenger.Creators do
 
   @doc """
   creates an attachment to send to facebook
-
     * :type - the type of the attachment
     * :payload - the inner payload of the attachment
   """
@@ -51,7 +52,6 @@ defmodule FacebookMessenger.Creators do
 
   @doc """
   creates a payload to send to facebook
-
     * :template_type - the type of the payload
     * :text - the text of the payload
     * :buttons - a list of buttons
